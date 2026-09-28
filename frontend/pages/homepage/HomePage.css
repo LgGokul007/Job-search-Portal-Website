@@ -1,0 +1,174 @@
+body {
+    margin: 0;
+    background-color: #070A0D;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+#mainbox {
+    width: min(90%, 1100px);
+    min-height: 70vh;
+    margin: 10vh auto;
+
+    padding: 40px;
+    box-sizing: border-box;
+
+    border: 1px solid #252a30;
+    border-radius: 20px;
+
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    grid-template-areas:
+        "box-1 box-2"
+        "box-3 box-3"
+        "box-4 box-4";
+
+    align-items: center;
+    gap: 30px;
+
+    background: #0d1117;
+}
+
+#welcomebox {
+    grid-area: box-1;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding: 20px;
+}
+
+#welcomebox > h1 {
+    margin: 0;
+    font-size: clamp(40px, 5vw, 80px);
+    line-height: 1.1;
+}
+
+#welcomebox > h2 {
+    margin: 20px 0 10px;
+    font-size: clamp(24px, 3vw, 50px);
+    line-height: 1.2;
+}
+
+#welcomebox > p {
+    margin: 15px 0 0;
+    font-size: clamp(16px, 1.5vw, 20px);
+    line-height: 1.6;
+}
+
+
+#mainbox > img {
+    grid-area: box-2;
+
+    width: min(100%, 350px);
+    aspect-ratio: 1 / 1;
+
+    object-fit: contain;
+
+    justify-self: center;
+}
+
+
+
+#buttonbox {
+    grid-area: box-3;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+#buttonbox > button {
+    width: min(100%, 300px);
+    min-height: 50px;
+
+    padding: 10px 20px;
+
+    border: none;
+    border-radius: 10px;
+
+    cursor: pointer;
+}
+
+#buttonbox > #startbtn {
+    background: linear-gradient(
+        to left,
+        #93c5fd,
+        #60a5fa,
+        #93c5fd
+    );
+
+    color: #0f172a;
+
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+#buttonbox > #haveaccbtn {
+    background: #252b33;
+
+    color: white;
+
+    font-size: 17px;
+    font-weight: bold;
+}
+
+
+
+#mainbox > p {
+    grid-area: box-4;
+
+    margin: 0;
+
+    text-align: center;
+
+    font-size: clamp(13px, 1.2vw, 16px);
+    color: #9ca3af;
+}
+
+
+
+
+@media (max-width: 700px) {
+
+    #mainbox {
+        width: 92%;
+        margin: 5vh auto;
+        padding: 25px 18px;
+
+        grid-template-columns: 1fr;
+
+        grid-template-areas:
+            "box-2"
+            "box-1"
+            "box-3"
+            "box-4";
+
+        gap: 10px;
+    }
+
+    #welcomebox {
+        padding: 10px;
+        text-align: center;
+    }
+
+    #mainbox > img {
+        width: min(60vw, 220px);
+    }
+
+    #buttonbox {
+        flex-direction: column;
+        width: 100%;
+        gap: 12px;
+    }
+
+    #buttonbox > button {
+        width: 100%;
+        max-width: 350px;
+    }
+}
