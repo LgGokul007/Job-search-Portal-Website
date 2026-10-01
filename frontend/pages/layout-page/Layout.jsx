@@ -4,15 +4,31 @@ import "./Layout.css"
 import { useNavigate } from "react-router-dom"
 import { useRef } from "react"
 import { Profile } from "./ProfileLayout"
+import { useState } from "react"
 
 
 export function Layout() {
+
+  const [popup,setPopup]=useState(false)
   console.log(2)
 
   const btn1 = useRef(null)
   const btn2 = useRef(null)
 
   const navigate = useNavigate()
+
+  function MaindivClick(){
+    if(popup){
+      setPopup(prev=>!prev)
+      
+    }
+    else{
+      return
+    }
+  }
+
+
+ 
 
   function clicked(event) {
     console.log(2.1)
@@ -29,9 +45,9 @@ export function Layout() {
   }
 
   return (
-    <div  id="LayoutContainer">
+    <div  id="LayoutContainer"  onClick={MaindivClick}>
       <div id="profileContainer" style={{gridArea:"profile"}}>
-        <Profile />
+        <Profile setPopup={setPopup} popup={popup}/>
       </div>
 
       <div id="mainContainer" style={{gridArea:"header"}}>

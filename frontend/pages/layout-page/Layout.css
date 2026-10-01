@@ -1,5 +1,6 @@
-header{
+header {
   position: sticky;
+  z-index: 1;
   top: 0;
   display: flex;
   width: 100%;
@@ -9,10 +10,11 @@ header{
   gap: 2%;
   background-color: #070A0D;
 
-  
+
 
 }
-.links{
+
+.links {
   --color: white;
   font-family: inherit;
   display: inline-block;
@@ -30,8 +32,8 @@ header{
   border-radius: 6px;
   position: relative;
   background-color: #070A0D;
-  
-  
+
+
 }
 
 
@@ -62,55 +64,163 @@ header{
   left: -30px;
 }
 
-#LayoutContainer{
+#LayoutContainer {
   display: flex;
   height: 100vh;
-  gap:1%;
- 
+  gap: 1%;
 }
-#profileContainer{
+
+#profileContainer {
   display: flex;
   flex-direction: column;
   height: 100Vh;
   width: 20%;
   top: 0;
-   background-color: #070A0D;
-   color: white;
-   padding-top: 1%;
-   border:2px solid white;
-   overflow-wrap:anywhere;
-   align-items: center;
-   border-radius: 20px;
-  
-   
-  
+  background-color: #070A0D;
+  color: white;
+  padding-top: 1%;
+  border: 2px solid white;
+  overflow-wrap: anywhere;
+  align-items: center;
+  border-radius: 20px;
+
 }
-#mainContainer{
-  overflow:scroll;
+
+#statusdiv {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+  width: min(100%, 220px);
+  margin: 0 auto;
+
+  box-sizing: border-box;
+}
+
+#statusdiv>h3 {
+  width: 100%;
+  margin: 0;
+  padding: 12px 16px;
+
+  background: #11151a;
+  border: 1px solid #343b46;
+  border-radius: 10px;
+
+  color: #bec4cf;
+  font-size: clamp(14px, 2vw, 15px);
+  font-weight: 500;
+  line-height: 1.4;
+
+  text-align: center;
+  box-sizing: border-box;
+}
+
+#statusdiv>h3>span {
+  color: greenyellow;
+}
+
+#logoutbtn {
+  width: 100%;
+  max-width: 110px;
+  margin-top:30%;
+
+  padding: 8px 14px;
+
+  font-size: clamp(13px, 1.5vw, 15px);
+  color: #bec4cf;
+  background-color: #11151a;
+
+  border: 1px solid #bec4cf;
+  border-radius: 7px;
+
+  cursor: pointer;
+
+  box-sizing: border-box;
+}
+
+#mainContainer {
+  overflow: scroll;
   width: 100%;
 }
 
-#profileimg{
-   width: clamp(100px, 25vw, 180px);
+#profileimg {
+  width: clamp(100px, 25vw, 180px);
   aspect-ratio: 1 / 1;
   height: auto;
   border-radius: 50%;
   object-fit: cover;
   display: block;
   max-width: 100%;
- 
+
 }
 
-#profileName{
+#profileName {
   font-size: clamp(1.0rem, 3vw, 1.2rem);
 }
 
-#profilemail{
+#profilemail {
   margin-top: 0;
   font-size: clamp(1.0rem, 3vw, 1.2rem);
   color: lightblue;
- 
+
+}
+
+#popup-container {
+  position: fixed;
+  border: 2px solid #bec4cf;
+  border-radius: 20px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(90%, 360px);
+  padding: 24px;
+  background: black;
+  color: #bec4cf;
+  z-index: 1;
+  box-sizing: border-box;
 }
 
 
 
+#popup-container h3 {
+  margin: 0 0 24px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+#popup-container>div {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+#popup-container button {
+  padding: 9px 18px;
+
+  border: 1px solid #3d4652;
+  border-radius: 8px;
+
+  background: #1b2027;
+  color: #bec4cf;
+
+  font-size: 14px;
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+#popup-container button:hover {
+  background: #272e38;
+}
+
+#popup-container button:first-child {
+  background: #c0392b;
+  border-color: #c0392b;
+  color: white;
+}
+
+#popup-container button:first-child:hover {
+  background: #a93226;
+}

@@ -6,9 +6,10 @@
 }
 
 #insideCard{
+  
    font-size: 1rem;
   color: #bec4cf;
-  background:  #141B21;
+  background: #141B21 ;
   padding: 1.5rem;
   border-radius: 1.2rem;
 
